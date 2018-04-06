@@ -299,6 +299,7 @@ $config_directories = [
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
+// Add this to your local settings after install.
 $settings['hash_salt'] = '';
 
 /**
@@ -784,3 +785,5 @@ $settings['entity_update_batch_size'] = 50;
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
   include $app_root . '/' . $site_path . '/settings.local.php';
 }
+
+$settings['install_profile'] = 'standard';

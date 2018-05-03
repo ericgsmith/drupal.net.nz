@@ -26,7 +26,7 @@
         "drupal/migrate_tools": "^4.0",
         "drupal/migrate_upgrade": "^3.0",
         "drush/drush": "^8.0.0",
-        "vlucas/phpdotenv": "^2.4",
+        "vlucas/phpdotenv": "1.0.6",
         "webflo/drupal-finder": "^1.0.0",
         "webmozart/path-util": "^2.3"
     },

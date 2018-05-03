@@ -1,0 +1,10 @@
+name: 'dnz_d7_migrate'
+type: module
+description: 'Configuration to migrate drupal.org.nz from D7 to D8.'
+core: 8.x
+package: 'Migrate'
+dependencies:
+  - migrate
+  - migrate_tools
+  - migrate_plus
+  - migrate_upgrade

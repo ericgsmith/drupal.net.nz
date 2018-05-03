@@ -1,4 +1,4 @@
-name: 'dnz_d7_migrate'
+name: 'Drupal.org.nz 7 to 8 migrate configuration'
 type: module
 description: 'Configuration to migrate drupal.org.nz from D7 to D8.'
 core: 8.x

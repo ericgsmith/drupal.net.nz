@@ -1,8 +1,8 @@
-#D7 to D8 migration
+# D7 to D8 migration
 
 ## Setup
 
-Setup fresh Drupal 8 install using this codebase as per the project [README](../../../../README.md)
+Setup fresh Drupal 8 install using this codebase.
 
 Add the drupal 7 database to your `settings.local.php` file using the key **drupal7**
 
@@ -23,7 +23,7 @@ $databases['drupal7']['default'] = [
 
 ## Run migrations
 
-Ensure this module is enabled then run the migrations via drush.
+Enable this module and then run the migrations via drush.
 
 ```
 drush migrate-import --all 

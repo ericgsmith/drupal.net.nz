@@ -1,0 +1,126 @@
+uuid: d9f4bc6d-5b8d-4202-b341-5d19f63de7f1
+langcode: en
+status: true
+dependencies: {  }
+id: upgrade_d7_node_company
+class: Drupal\migrate\Plugin\Migration
+field_plugin_method: null
+cck_plugin_method: null
+migration_tags:
+  - 'Drupal 7'
+  - Content
+migration_group: migrate_drupal_7
+label: 'Nodes (Company)'
+source:
+  plugin: d7_node
+  node_type: company
+process:
+  nid: tnid
+  vid: vid
+  langcode:
+    plugin: default_value
+    source: language
+    default_value: und
+  title: title
+  uid: node_uid
+  status: status
+  created: created
+  changed: changed
+  promote: promote
+  sticky: sticky
+  revision_uid: revision_uid
+  revision_log: log
+  revision_timestamp: timestamp
+  comment_node_company/0/status: comment
+  body:
+    plugin: get
+    source: body
+  field_website:
+    plugin: field_link
+    source: field_website
+  field_logo:
+    plugin: sub_process
+    source: field_logo
+    process:
+      target_id: fid
+      alt: alt
+      title: title
+      width: width
+      height: height
+  field_services:
+    plugin: sub_process
+    source: field_services
+    process:
+      target_id: tid
+  field_sectors:
+    plugin: sub_process
+    source: field_sectors
+    process:
+      target_id: tid
+  field_links:
+    plugin: field_link
+    source: field_links
+  field_facebook:
+    plugin: field_link
+    source: field_facebook
+  field_linkedin:
+    plugin: field_link
+    source: field_linkedin
+  field_twitter:
+    plugin: field_link
+    source: field_twitter
+  field_region:
+    plugin: sub_process
+    source: field_region
+    process:
+      target_id: tid
+  field_phone:
+    plugin: get
+    source: field_phone
+  field_company_size:
+    plugin: sub_process
+    source: field_company_size
+    process:
+      target_id: tid
+  field_testimonials:
+    plugin: get
+    source: field_testimonials
+  field_address:
+    plugin: get
+    source: field_address
+  field_showcases:
+    plugin: get
+    source: field_showcases
+  field_contract_values:
+    plugin: sub_process
+    source: field_contract_values
+    process:
+      target_id: tid
+  field_special_expertise:
+    plugin: sub_process
+    source: field_special_expertise
+    process:
+      target_id: tid
+  field_drupal_org:
+    plugin: field_link
+    source: field_drupal_org
+  field_drupal_contribution_areas:
+    plugin: sub_process
+    source: field_drupal_contribution_areas
+    process:
+      target_id: tid
+  field_contact_email:
+    plugin: sub_process
+    source: field_contact_email
+    process:
+      value: email
+destination:
+  plugin: 'entity:node'
+  default_bundle: company
+migration_dependencies:
+  required:
+    - upgrade_d7_user
+    - upgrade_d7_node_type
+  optional:
+    - upgrade_d7_field_instance
+    - upgrade_d7_comment_field_instance
